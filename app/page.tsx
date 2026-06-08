@@ -20,13 +20,22 @@ export default function Home() {
               </a>
             ))}
           </nav>
-          <a
-            href="#demo"
-            className="text-sm font-medium px-4 py-2 rounded-full border transition-colors hover:opacity-80"
-            style={{ borderColor: "#202020", color: "#202020" }}
-          >
-            데모 보기
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="/auth"
+              className="text-sm font-medium transition-opacity hover:opacity-60"
+              style={{ color: "#202020" }}
+            >
+              로그인
+            </a>
+            <a
+              href="#demo"
+              className="text-sm font-medium px-4 py-2 rounded-full border transition-colors hover:opacity-80"
+              style={{ borderColor: "#202020", color: "#202020" }}
+            >
+              데모 보기
+            </a>
+          </div>
         </div>
       </header>
 
@@ -53,7 +62,7 @@ export default function Home() {
             데모 영상 보기 →
           </a>
           <a
-            href="#"
+            href="/auth"
             className="text-sm font-medium underline underline-offset-4 transition-opacity hover:opacity-50"
             style={{ color: "#202020" }}
           >
