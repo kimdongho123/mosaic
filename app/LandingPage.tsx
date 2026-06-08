@@ -139,10 +139,9 @@ export default function LandingPage({ isLoggedIn }: Props) {
 
             {/* Headline */}
             <h1 className="font-black leading-[1.05] tracking-tight mb-6" style={{ fontSize: 'clamp(44px, 5.5vw, 80px)' }}>
-              <span className="block text-gray-900 dark:text-white">사진 한 장을</span>
-              <span className="block text-gray-900 dark:text-white">업로드하면</span>
-              <span className="block gradient-text mt-1">AI가 바이럴 영상을</span>
-              <span className="block gradient-text">만들어드립니다</span>
+              <span className="block text-gray-900 dark:text-white">내 사진을</span>
+              <span className="block gradient-text mt-1">주제별 영상으로</span>
+              <span className="block gradient-text">만들어봐요</span>
             </h1>
 
             <p className="text-base lg:text-lg leading-relaxed text-gray-500 dark:text-white/44 max-w-lg mb-8">
