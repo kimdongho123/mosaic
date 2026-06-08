@@ -19,7 +19,7 @@ export default async function GeneratePage() {
     .from('user_credits')
     .select('balance')
     .eq('user_id', user.id)
-    .single()
+    .maybeSingle()
 
   return (
     <GenerateClient
