@@ -13,6 +13,14 @@ export default async function GeneratePage() {
 
   const profile = (user as { profile?: { name?: string; avatar_url?: string } }).profile
 
+  const isAdmin = user.email === process.env.ADMIN_EMAIL
+
+  const { data: creditsData } = await insforge.database
+    .from('user_credits')
+    .select('balance')
+    .eq('user_id', user.id)
+    .single()
+
   return (
     <GenerateClient
       user={{
@@ -20,6 +28,8 @@ export default async function GeneratePage() {
         name: profile?.name ?? null,
         avatarUrl: profile?.avatar_url ?? null,
       }}
+      initialBalance={creditsData?.balance ?? 0}
+      isAdmin={isAdmin}
     />
   )
 }
