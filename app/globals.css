@@ -22,3 +22,12 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes corner-spin {
+  from { transform: translate(-50%, -50%) scale(0.5) rotateZ(0deg); }
+  to   { transform: translate(-50%, -50%) scale(0.5) rotateZ(360deg); }
+}
+
+.card-corner-spin {
+  animation: corner-spin 3s linear infinite;
+}

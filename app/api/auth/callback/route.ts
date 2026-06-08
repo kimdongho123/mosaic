@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(new URL('/auth?error=exchange_failed', request.url))
   }
 
-  const response = NextResponse.redirect(new URL('/dashboard', request.url))
+  const response = NextResponse.redirect(new URL('/generate', request.url))
   setAuthCookies(response.cookies, {
     accessToken: data.accessToken,
     refreshToken: data.refreshToken

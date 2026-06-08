@@ -1,10 +1,15 @@
+import { redirect } from 'next/navigation'
+import { createInsForgeServerClient } from '../lib/insforge/server'
 import { signInWithGoogle } from './actions'
 
-export default function AuthPage({
+export default async function AuthPage({
   searchParams
 }: {
   searchParams: Promise<{ error?: string }>
 }) {
+  const insforge = await createInsForgeServerClient()
+  const { data } = await insforge.auth.getCurrentUser()
+  if (data?.user?.id) redirect('/generate')
   return (
     <div
       className="min-h-screen flex items-center justify-center px-4"

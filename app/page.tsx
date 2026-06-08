@@ -1,4 +1,10 @@
-export default function Home() {
+import { createInsForgeServerClient } from './lib/insforge/server'
+
+export default async function Home() {
+  const insforge = await createInsForgeServerClient()
+  const { data } = await insforge.auth.getCurrentUser()
+  const isLoggedIn = !!data?.user?.id
+
   return (
     <div className="flex flex-col min-h-screen" style={{ backgroundColor: "#ECEEF0", color: "#202020" }}>
 
@@ -9,7 +15,7 @@ export default function Home() {
             mosaic
           </span>
           <nav className="hidden md:flex items-center gap-8">
-            {["기능", "사례", "가격"].map((item) => (
+            {["기능", "사례", "가격보기"].map((item) => (
               <a
                 key={item}
                 href="#"
@@ -21,20 +27,32 @@ export default function Home() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <a
-              href="/auth"
-              className="text-sm font-medium transition-opacity hover:opacity-60"
-              style={{ color: "#202020" }}
-            >
-              로그인
-            </a>
-            <a
-              href="#demo"
-              className="text-sm font-medium px-4 py-2 rounded-full border transition-colors hover:opacity-80"
-              style={{ borderColor: "#202020", color: "#202020" }}
-            >
-              데모 보기
-            </a>
+            {isLoggedIn ? (
+              <a
+                href="/generate"
+                className="text-sm font-medium px-4 py-2 rounded-full transition-opacity hover:opacity-80"
+                style={{ backgroundColor: "#202020", color: "#ECEEF0" }}
+              >
+                시작하기 →
+              </a>
+            ) : (
+              <>
+                <a
+                  href="/auth"
+                  className="text-sm font-medium transition-opacity hover:opacity-60"
+                  style={{ color: "#202020" }}
+                >
+                  로그인
+                </a>
+                <a
+                  href="#demo"
+                  className="text-sm font-medium px-4 py-2 rounded-full border transition-colors hover:opacity-80"
+                  style={{ borderColor: "#202020", color: "#202020" }}
+                >
+                  데모 보기
+                </a>
+              </>
+            )}
           </div>
         </div>
       </header>
