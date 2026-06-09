@@ -270,8 +270,6 @@ export default function LandingPage({ isLoggedIn }: Props) {
 
           {/* Steps — horizontal connected */}
           <div className="relative">
-            {/* Connector line */}
-            <div className="hidden md:block absolute top-10 left-[16.5%] right-[16.5%] h-px bg-gradient-to-r from-transparent via-black/10 dark:via-white/10 to-transparent" />
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
