@@ -138,15 +138,15 @@ export default function LandingPage({ isLoggedIn }: Props) {
             </div>
 
             {/* Headline */}
-            <h1 className="font-black leading-[1.05] tracking-tight mb-6" style={{ fontSize: 'clamp(44px, 5.5vw, 80px)' }}>
+            <h1 className="font-black leading-[1.2] tracking-tight mb-6" style={{ fontSize: 'clamp(44px, 4.2vw, 75px)' }}>
               <span className="block text-gray-900 dark:text-white">내 사진을</span>
               <span className="block gradient-text mt-1">주제별 영상으로</span>
               <span className="block gradient-text">만들어봐요</span>
             </h1>
 
             <p className="text-base lg:text-lg leading-relaxed text-gray-500 dark:text-white/44 max-w-lg mb-8">
-              야구 중계샷, K-POP 직캠, 힙합 무대, 지브리 애니메이션 —
-              원하는 테마를 선택하면 사진 한 장이 8초 바이럴 영상이 됩니다.
+              야구 중계샷, K-POP 직캠, 힙합 무대, 지브리 애니메이션 — <br />
+              원하는 테마를 선택하면 사진 한 장이 바이럴 영상이 됩니다.
             </p>
 
             {/* CTAs */}
