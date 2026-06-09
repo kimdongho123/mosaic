@@ -1,7 +1,7 @@
 import { updateSession, type CookieStore } from '@insforge/sdk/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   // 1단계: 갱신된 토큰을 응답 쿠키에 쓸 임시 response 생성
   const tempResponse = NextResponse.next({ request })
 
