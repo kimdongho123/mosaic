@@ -12,8 +12,9 @@ export default async function GeneratePage() {
   }
 
   const profile = (user as { profile?: { name?: string; avatar_url?: string } }).profile
-
-  const isAdmin = user.email === process.env.ADMIN_EMAIL
+  // const isAdmin = user.email === process.env.ADMIN_EMAIL
+  const adminEmails = (process.env.ADMIN_EMAIL ?? '').split(',').map(e => e.trim())
+  const isAdmin = adminEmails.includes(user.email)
 
   const { data: creditsData } = await insforge.database
     .from('user_credits')
